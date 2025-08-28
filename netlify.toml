@@ -1,6 +1,8 @@
 [build]
-  command = "npm run build"
+  command = "npm --prefix fxforecast ci && npm --prefix fxforecast run build"
+  publish = "fxforecast/dist"
 
-[functions]
-  node_bundler = "esbuild"
-  external_node_modules = ["@supabase/supabase-js","@supabase/ssr"]
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
